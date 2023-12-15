@@ -1,0 +1,136 @@
+body {
+    color: white;
+    background-image: linear-gradient(to right, black,rgb(9, 8, 8));
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-bottom: 2px;
+
+
+
+}
+
+
+header img {
+    width: 240px;
+    height: 220px;
+    border-radius: 2%;
+    margin: 2%;
+    
+
+
+}
+
+h1{
+    color: white;
+    font-family: 'Asap Condensed', sans-serif;
+    text-align: center;
+    color: ffffff30;
+    margin: 2%;
+}
+
+#pa{
+    width: 70px;
+    height: 50px;
+}
+
+#pn{
+    width: 70px;
+    height: 50px;
+}
+
+#venc{
+    width: 70px;
+    height: 50px;
+}
+
+#Text1{
+    font-family: font-family: 'Asap Condensed', sans-serif;
+    font-size: 25pt;
+    
+}
+.center {
+    
+    
+    font-size: 5%;
+    
+    width: 200px;
+    height: 200px;
+
+}
+
+.cabecalho{
+    
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+
+
+ .calculadora{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 700px;
+    height: 500px;
+    max-width: 1000px;    
+    border-radius: 10px;
+    background: #ffffff20;
+    border: 2px solid #ffffff40;
+  
+}
+.calculadora input{
+    display: flex;
+    width: 200px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 2px solid #ffffff10;
+
+
+}
+.btnCalcular{
+    background-image: linear-gradient(45deg, #4C4478, #08354D)
+    font-family: font-family: 'Jost', sans-serif;
+    font-size: 20pt;
+    display: flex;
+    text-align: center;
+    margin-top: 40px;
+
+    
+}
+
+.btnCalcular:hover{
+    opacity: 0.8;
+}
+
+
+/*
+input{
+    width: 80%;
+    height: 15%;
+    border-radius: 20px;
+    margin: 10px;
+    border: 2px solid #ffffff10;
+    
+
+}
+
+    
+    
+    
+}
+
+}
+*/
+
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
+
+    
+    
+
+}

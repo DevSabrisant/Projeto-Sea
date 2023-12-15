@@ -3,69 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="site.css"
-    <title>Sea Telecom</title>
+    <link rel="stylesheet" href="estilo/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,300;1,300&family=Jost:ital,wght@1,300&family=Literata:ital,opsz,wght@0,7..72,200;0,7..72,300;1,7..72,200&family=Mansalva&family=Poppins:wght@100&display=swap" rel="stylesheet">
+
+
+    <title> Sea Telecom </title>
     
-        <style>
-               
-                .calculadora{
-                    width: 100%;
-                    max-width: 500px;
-                    height: 350px;
-                    border-radius: 10px;
-                    background: #ffffff20;
-                    border: 2px solid #ffffff40;
-                  
+    </head>
+    <body>
+        <header class="cabecalho">
+        <div class="center">
+    <img src="./img/sea2.png"></img>
 
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-
-
-
-                }
-
-                input{
-                    width: 70%;
-                    height: 15%;
-                    border-radius: 20px;
-                    margin: 10px;
-                    border: 2px solid #ffffff10
-                    
-
-                }
-                input[type="submit"]{
-                    background-image: linear-gradient(45deg, #4C4478, #08354D)
-                }
-
-                .container {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 400px;
-                
-                }
-         </style>
-</head>
-
-<body>
-     <header>
-    <div class="center">
-<img src="./img/seatelecomimg.png"></img>
-</div>
-
-<h1>  SAC  </h1>
-<header>
-
-<div class="container">
-    <div class="calculadora">
-<input type="plano" placeholder=" Qual o plano atual "/>
-<input type="vencimento" placeholder=" Vencimento atual "/>
-<input type="submit"/>      
     </div>
-</div>
-           
     </header>
-</body>
-</html>
+
+    <h1>  SAC  </h1>
+    <form>
+    <div class="container">
+
+        <div class="calculadora">
+           
+            <label for="Plano atual" id ="Text1"> Plano Atual </label>
+            <select name="pAtual" id = "pa"> 
+            <option value="250">250</option> 
+            <option value="350">350</option>
+            <option value="450">450</option> 
+            <option value="500">500</option>  
+            <option value="600">600</option>  
+            <option value="700">700</option>    
+            </select>
+            <label for="pNovo" id ="Text1"> Plano Novo </label>
+            <select name="pNovo" id = "pn"> 
+            <option value="250">250</option> 
+            <option value="350">350</option>
+            <option value="450">450</option> 
+            <option value="500">500</option>  
+            <option value="600">600</option>  
+            <option value="700">700</option>    
+            </select>
+
+    <label for="vencimento" id ="Text1"> Vencimento </label>
+    <select name="vencimento" id = "venc"> 
+    <option value="5">05</option> 
+    <option value="10">10</option>
+    <option value="15">15</option> 
+    <option value="20">20</option>
+    <option value="25">25</option>
+    <option value="30">30</option>  
+    </select>
+   <button class="btnCalcular">Enviar</button>  
+
+         
+        </div>
+    </div>
+</form>
+        
+    </body>
+    </html>
