@@ -4,29 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="static/faviconsea.png" type="image/x-icon">
-    <title>Mudança de Plano</title>
-    
+    <title>Mudança de Vencimento</title>
     <style>
+
+        *{
+            text-decoration: none;
+            color: #000;
+
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #11BFF5;
-            margin: 0;
+            
+           
+        }
+
+        .conteudo-principal{
+            margin: 0%;
             display: flex;
-            align-items: center;
+            align-items: center; 
             justify-content: center;
-            min-height: 100vh;
+           
         }
 
         .container {
             max-width: 600px;
             width: 100%;
+            margin-top: 50px;
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             text-align: center;
             display: flex;
-            flex-direction: column;
+            flex-direction: center;
             align-items: flex-start; /* Alterado para flex-start para alinhar à esquerda */
         }
 
@@ -60,7 +71,7 @@
         }
 
         button {
-            background-color: #4caf50;
+            background-color: #3498db;
             color: white;
             padding: 14px 20px;
             border: none;
@@ -77,24 +88,42 @@
         }
 
         button:hover {
-            background-color: #388e3c;
+            background-color: #2980b9;
         }
 
         img {
-            max-width: 60%;
-            height: auto;
-            display: block;
-            margin: 20px;
-            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: ;
+            max-width: 100%;
+            height: 250px;
+            margin: 10px;
+            border-radius: 20px;
         }
 
+      
+
+        #vencimentoNovo, #vencimentoAtual, #planoCliente{
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .imagens-laterais{
+            position: absolute;
+            left: 100px;
+            top: 0;
+            margin-left: 10px;
+            width: 250px; /* Ajuste conforme necessário */
+            height: 100vh; /* Ajuste conforme necessário */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        
         textarea {
             resize: none;
             font-size: 16px;
-            
         }
-
-        footer
 
         .checkbox-container {
             display: flex;
@@ -103,17 +132,32 @@
             margin-bottom: 20px;
             width: 100%; /* Adicionado para garantir largura total */
         }
-        #planoAtual, #planoNovo, #vencimento{
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-        } 
+        .footer{
+            display: flex;
+            flex-direction: row;
+        }
+       
+       .links{
+        display: flex;
+        flex-direction: column;
+       
+       }
+
+       #git{
+        opacity: 70%;
+        height: 75px;
+        width: 75px:
+        }
+      
+       
     </style>
     <script>
         function trocarPagina() {
-            window.location.href = "/homepage2";
+            window.location.href = "/";
         }
 
         function copiarTexto() {
-            var textarea = document.getElementById('resultado');
+            var textarea = document.getElementById('resultadoVencimento');
             textarea.select();
             document.execCommand('copy');
         }
@@ -121,31 +165,22 @@
 </head>
 <body>
 
-<img src="{{ url_for('static', filename='seatelecomimg.png') }}" alt="Logo">
+    <header>
 
+    <div class="imagens-laterais">
+        <img src="{{ url_for('static', filename='seatelecomimg.png') }}" alt="Logo"> 
+        
+    </div> 
+    
 
+    </header>
+
+    
+<main class = "conteudo-principal">
 <div class="container">
-    <form action="/" method="post">
-        <label for="planoAtual">Plano Atual:</label>
-        <select id="planoAtual" name="planoAtual" required>
-            <option value="">Selecionar</option>
-            <option value="500">Plano 500</option>
-            <option value="600">Plano 600</option>
-            <option value="700">Plano 700</option>
-            <option value="800">Plano 800</option>
-        </select>
-
-        <label for="planoNovo">Plano Novo:</label>
-        <select id="planoNovo" name="planoNovo" required>
-            <option value="">Selecionar</option>
-            <option value="500">Plano 500</option>
-            <option value="600">Plano 600</option>
-            <option value="700">Plano 700</option>
-            <option value="800">Plano 800</option>
-        </select>
-
-        <label for="vencimento">Vencimento do Cliente:</label>
-        <select id="vencimento" name="vencimento" required>
+    <form action="/homepage2" method="post">
+        <label for="vencimentoAtual">Vencimento Atual:</label>
+        <select id="vencimentoAtual" name="vencimentoAtual" required>
             <option value="">Selecionar</option>
             <option value="5">05</option>
             <option value="10">10</option>
@@ -155,6 +190,25 @@
             <option value="30">30</option>
         </select>
 
+        <label for="vencimentoNovo">Vencimento Novo:</label>
+        <select id="vencimentoNovo" name="vencimentoNovo" required>
+            <option value="">Selecionar</option>
+            <option value="5">05</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
+
+        <label for="planoCliente">Plano do Cliente:</label>
+        <select id="planoCliente" name="planoCliente" required>
+            <option value="">Selecionar</option>
+            <option value="250">Plano 250</option>
+            <option value="350">Plano 350</option>
+            <option value="450">Plano 450</option>
+            <option value="600">Plano 600</option>
+        </select>
         <div class="checkbox-container">
             <label for="cidadeAnanindeua" style="margin-right: 10px;">Cliente de Ananindeua:</label>
             <input type="checkbox" id="cidadeAnanindeua" name="cidadeAnanindeua">
@@ -165,11 +219,29 @@
             <button type="button" onclick="copiarTexto()">Copiar</button>
         </div>
 
-        <textarea id="resultado" name="resultado" rows="4" readonly>{{ resultado }}</textarea>
+        <textarea id="resultadoVencimento" name="resultadoVencimento" rows="4" readonly>{{ resultadoVencimento }}</textarea>
 
-        <button type="button" onclick="trocarPagina()">IR PARA -> Mudança de Vencimento</button>
+        <button type="button" onclick="trocarPagina()">VOLTAR PARA -> Mudança de Plano</button>
     </form>
+
+
+
 </div>
+</main>
+
+<div class = "footer">
+    <div class = "links">
+
+    <a href="https://github.com/CaioLir4">Caio Lira</a>
+      <a href="https://github.com/ewdson7/Projetos">Ewdson Tiago</a>
+        <a href="https://github.com/DevSabrisant">Sabrina Santana</a>
+    </div>
+    <div>
+        <img id = "git" src="{{ url_for('static', filename='github.png') }}" alt="github">  
+    </div>
+</div>
+
+
 
 </body>
 </html>
