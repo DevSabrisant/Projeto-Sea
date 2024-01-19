@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/faviconsea.png" type="image/x-icon">
+    <title>Mudança de Plano</title>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #11BFF5;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alterado para flex-start para alinhar à esquerda */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        select, textarea {
+            width: calc(100% - 16px);
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #bdc3c7;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            flex: 1;
+            margin-right: 8px;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+        button:last-child {
+            margin-right: 0;
+        }
+
+        button:hover {
+            background-color: #388e3c;
+        }
+
+        img {
+            max-width: 60%;
+            height: auto;
+            display: block;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        textarea {
+            resize: none;
+            font-size: 16px;
+            
+        }
+
+        footer
+
+        .checkbox-container {
+            display: flex;
+            justify-content: flex-start; /* Alterado para flex-start para alinhar à esquerda */
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%; /* Adicionado para garantir largura total */
+        }
+        #planoAtual, #planoNovo, #vencimento{
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        } 
+    </style>
+    <script>
+        function trocarPagina() {
+            window.location.href = "/homepage2";
+        }
+
+        function copiarTexto() {
+            var textarea = document.getElementById('resultado');
+            textarea.select();
+            document.execCommand('copy');
+        }
+    </script>
+</head>
+<body>
+
+<img src="{{ url_for('static', filename='seatelecomimg.png') }}" alt="Logo">
+
+
+<div class="container">
+    <form action="/" method="post">
+        <label for="planoAtual">Plano Atual:</label>
+        <select id="planoAtual" name="planoAtual" required>
+            <option value="">Selecionar</option>
+            <option value="500">Plano 500</option>
+            <option value="600">Plano 600</option>
+            <option value="700">Plano 700</option>
+            <option value="800">Plano 800</option>
+        </select>
+
+        <label for="planoNovo">Plano Novo:</label>
+        <select id="planoNovo" name="planoNovo" required>
+            <option value="">Selecionar</option>
+            <option value="500">Plano 500</option>
+            <option value="600">Plano 600</option>
+            <option value="700">Plano 700</option>
+            <option value="800">Plano 800</option>
+        </select>
+
+        <label for="vencimento">Vencimento do Cliente:</label>
+        <select id="vencimento" name="vencimento" required>
+            <option value="">Selecionar</option>
+            <option value="5">05</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
+
+        <div class="checkbox-container">
+            <label for="cidadeAnanindeua" style="margin-right: 10px;">Cliente de Ananindeua:</label>
+            <input type="checkbox" id="cidadeAnanindeua" name="cidadeAnanindeua">
+        </div>
+
+        <div class="button-container">
+            <button type="submit">Calcular</button>
+            <button type="button" onclick="copiarTexto()">Copiar</button>
+        </div>
+
+        <textarea id="resultado" name="resultado" rows="4" readonly>{{ resultado }}</textarea>
+
+        <button type="button" onclick="trocarPagina()">IR PARA -> Mudança de Vencimento</button>
+    </form>
+</div>
+
+</body>
+</html>
