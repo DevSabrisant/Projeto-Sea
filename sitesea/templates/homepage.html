@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="static/faviconsea.png" type="image/x-icon">
-    <title>Mudança de Vencimento</title>
+    <title>Mudança de Plano</title>
+    
     <style>
-
         *{
             text-decoration: none;
             color: #000;
@@ -20,7 +20,7 @@
         }
 
         .conteudo-principal{
-            margin: 0%;
+            margin: 0;
             display: flex;
             align-items: center; 
             justify-content: center;
@@ -111,7 +111,6 @@
             position: absolute;
             left: 100px;
             top: 0;
-            margin-left: 10px;
             width: 250px; /* Ajuste conforme necessário */
             height: 100vh; /* Ajuste conforme necessário */
             display: flex;
@@ -148,16 +147,17 @@
         height: 75px;
         width: 75px:
         }
-      
-       
+        #planoNovo, #planoAtual, #vencimento{
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        }
     </style>
     <script>
         function trocarPagina() {
-            window.location.href = "/";
+            window.location.href = "/homepage2";
         }
 
         function copiarTexto() {
-            var textarea = document.getElementById('resultadoVencimento');
+            var textarea = document.getElementById('resultado');
             textarea.select();
             document.execCommand('copy');
         }
@@ -166,49 +166,43 @@
 <body>
 
     <header>
+           <div class="imagens-laterais">
+               <img src="{{ url_for('static', filename='seatelecomimg.png') }}" alt="Logo"> 
+            </div> 
+           </header>
 
-    <div class="imagens-laterais">
-        <img src="{{ url_for('static', filename='seatelecomimg.png') }}" alt="Logo"> 
-        
-    </div> 
-    
-
-    </header>
-
-    
-<main class = "conteudo-principal">
+<main class='conteudo-principal'>
 <div class="container">
-    <form action="/homepage2" method="post">
-        <label for="vencimentoAtual">Vencimento Atual:</label>
-        <select id="vencimentoAtual" name="vencimentoAtual" required>
+    <form action="/" method="post">
+        <label for="planoAtual">Plano Atual:</label>
+        <select id="planoAtual" name="planoAtual" required>
             <option value="">Selecionar</option>
-            <option value="5">05</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="25">25</option>
-            <option value="30">30</option>
-        </select>
-
-        <label for="vencimentoNovo">Vencimento Novo:</label>
-        <select id="vencimentoNovo" name="vencimentoNovo" required>
-            <option value="">Selecionar</option>
-            <option value="5">05</option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-            <option value="20">20</option>
-            <option value="25">25</option>
-            <option value="30">30</option>
-        </select>
-
-        <label for="planoCliente">Plano do Cliente:</label>
-        <select id="planoCliente" name="planoCliente" required>
-            <option value="">Selecionar</option>
-            <option value="250">Plano 250</option>
-            <option value="350">Plano 350</option>
-            <option value="450">Plano 450</option>
+            <option value="500">Plano 500</option>
             <option value="600">Plano 600</option>
+            <option value="700">Plano 700</option>
+            <option value="800">Plano 800</option>
         </select>
+
+        <label for="planoNovo">Plano Novo:</label>
+        <select id="planoNovo" name="planoNovo" required>
+            <option value="">Selecionar</option>
+            <option value="500">Plano 500</option>
+            <option value="600">Plano 600</option>
+            <option value="700">Plano 700</option>
+            <option value="800">Plano 800</option>
+        </select>
+
+        <label for="vencimento">Vencimento do Cliente:</label>
+        <select id="vencimento" name="vencimento" required>
+            <option value="">Selecionar</option>
+            <option value="5">05</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+        </select>
+
         <div class="checkbox-container">
             <label for="cidadeAnanindeua" style="margin-right: 10px;">Cliente de Ananindeua:</label>
             <input type="checkbox" id="cidadeAnanindeua" name="cidadeAnanindeua">
@@ -219,13 +213,10 @@
             <button type="button" onclick="copiarTexto()">Copiar</button>
         </div>
 
-        <textarea id="resultadoVencimento" name="resultadoVencimento" rows="4" readonly>{{ resultadoVencimento }}</textarea>
+        <textarea id="resultado" name="resultado" rows="4" readonly>{{ resultado }}</textarea>
 
-        <button type="button" onclick="trocarPagina()">VOLTAR PARA -> Mudança de Plano</button>
+        <button type="button" onclick="trocarPagina()">IR PARA -> Mudança de Vencimento</button>
     </form>
-
-
-
 </div>
 </main>
 
@@ -240,7 +231,6 @@
         <img id = "git" src="{{ url_for('static', filename='github.png') }}" alt="github">  
     </div>
 </div>
-
 
 
 </body>
