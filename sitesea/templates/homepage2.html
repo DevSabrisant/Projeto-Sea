@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="static/faviconsea.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,300;1,300&family=Jost:ital,wght@1,300&family=Julius+Sans+One&family=Literata:ital,opsz,wght@0,7..72,200;0,7..72,300;1,7..72,200&family=Mansalva&family=Pixelify+Sans&family=Poppins:wght@100&display=swap" rel="stylesheet">
     <title>Mudança de Vencimento</title>
     <style>
 
@@ -15,6 +16,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #11BFF5;
+            overflow: hidden;
             
            
         }
@@ -139,13 +141,14 @@
        .links{
         display: flex;
         flex-direction: column;
+        font-family: julius sans one;
        
        }
 
        #git{
         opacity: 70%;
-        height: 75px;
-        width: 75px;
+        height: 55px;
+        width: 55px;
         }
       
        
@@ -220,7 +223,7 @@
             <button type="button" onclick="copiarTexto()">Copiar</button>
         </div>
 
-        <textarea id="resultadoVencimento" name="resultadoVencimento" rows="4" readonly>{{ resultadoVencimento }}</textarea>
+        <textarea id="resultado" name="resultado" rows="4" readonly>{{ resultado or 'Resultado' }}</textarea>
 
         <button type="button" onclick="trocarPagina()">VOLTAR PARA -> Mudança de Plano</button>
     </form>
@@ -234,7 +237,7 @@
     <div class = "links">
 
     <a href="https://github.com/CaioLir4">Caio Lira</a>
-      <a href="https://github.com/ewdson7/Projetos">Ewdson Tiago</a>
+      <a href="https://github.com/ewdson7">Ewdson Tiago</a>
         <a href="https://github.com/DevSabrisant">Sabrina Santana</a>
     </div>
     <div>
