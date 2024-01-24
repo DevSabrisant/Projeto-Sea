@@ -208,10 +208,10 @@
         <label for="planoCliente">Plano do Cliente:</label>
         <select id="planoCliente" name="planoCliente" required>
             <option value="">Selecionar</option>
-            <option value="250">Plano 250</option>
-            <option value="350">Plano 350</option>
-            <option value="450">Plano 450</option>
+            <option value="500">Plano 500</option>
             <option value="600">Plano 600</option>
+            <option value="700">Plano 700</option>
+            <option value="800">Plano 800</option>
         </select>
         <div class="checkbox-container">
             <label for="cidadeAnanindeua" style="margin-right: 10px;">Cliente de Ananindeua:</label>
@@ -223,7 +223,7 @@
             <button type="button" onclick="copiarTexto()">Copiar</button>
         </div>
 
-        <textarea id="resultado" name="resultado" rows="4" readonly>{{ resultado or 'Resultado' }}</textarea>
+        <textarea id="resultado" name="resultado" rows="4" readonly>{{ resultado or '' }}</textarea>
 
         <button type="button" onclick="trocarPagina()">VOLTAR PARA -> Mudança de Plano</button>
     </form>

@@ -101,7 +101,7 @@
         img {
             display: flex;
             flex-direction: column;
-            justify-content: ;
+            justify-content: center;
             max-width: 100%;
             height: 250px;
             margin: 10px;
@@ -223,7 +223,7 @@
             <button type="button" onclick="copiarTexto()">Copiar</button>
         </div>
 
-        <textarea id="resultado" name="resultado" rows="4" readonly>{{ resultado or 'resultado' }}</textarea>
+        <textarea id="resultado" name="resultado" rows="4" readonly>{{ resultado or '' }}</textarea>
 
         <button type="button" onclick="trocarPagina()">IR PARA -> Mudança de Vencimento</button>
     </form>
